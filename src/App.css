@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+body {
+    margin: 0;
+    background-color: #000;
+    color: #00ff00;
+    font-family: "Courier New", monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.rugved-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 40px;
+  min-height: 100vh;
+  background: linear-gradient(270deg, #0a0a0a, #1a1a1a, #121212, #0d0d0d);
+  background-size: 800% 800%;
+  animation: darkGradientShift 15s ease infinite;
+  color: #00ff99;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes darkGradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.input-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-wrapper input {
+    background-color: #000;
+    color: #0f0;
+    border: 1px solid #0f0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.input-wrapper button {
+    background-color: #0f0;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card-list {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card {
+    background-color: #111;
+    border: 1px solid #0f0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: darkred;
+}
+
+.input-wrapper button:hover {
+    background-color: darkgreen;
 }
