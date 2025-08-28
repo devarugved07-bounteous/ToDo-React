@@ -1,28 +1,24 @@
-import React, { useState } from 'react'
-
+import React, { useState } from "react";
 
 type TodoItem = {
     id: number;
     task: string;
-    
-}
-
+};
 
 const Rugved2 = () => {
-    const [task, setTask] = useState('');
+    const [task, setTask] = useState("");
     const [todos, setTodos] = useState<TodoItem[]>([]);
 
     const nextId = React.useRef(1);
 
     const handleAdd = () => {
         if (task.trim()) {
-
             const newTodo: TodoItem = {
                 id: nextId.current++,
                 task: task.trim(),
             };
             setTodos([...todos, newTodo]);
-            setTask('');
+            setTask("");
         }
     };
 
@@ -31,7 +27,7 @@ const Rugved2 = () => {
     };
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter') {
+        if (e.key === "Enter") {
             handleAdd();
         }
     };
@@ -42,7 +38,9 @@ const Rugved2 = () => {
                 <h1>Deva Rugved's To Do List</h1>
                 <div className="input-wrapper">
                     <input
-                        type="text" placeholder="Enter a task..." value={task}
+                        type="text"
+                        placeholder="Enter a task..."
+                        value={task}
                         onChange={(e) => setTask(e.target.value)}
                         onKeyDown={handleKeyDown}
                     />
@@ -53,13 +51,15 @@ const Rugved2 = () => {
                     {todos.map((todo) => (
                         <div key={todo.id} className="card">
                             <span>{todo.task}</span>
-                            <button onClick={() => handleDelete(todo.id)}>Delete</button>
+                            <button onClick={() => handleDelete(todo.id)}>
+                                Delete
+                            </button>
                         </div>
                     ))}
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Rugved2
+export default Rugved2;
